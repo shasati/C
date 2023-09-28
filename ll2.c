@@ -1,5 +1,5 @@
-/*WAP to create a linked list and perform the following functions 
-1. Search and element in the list
+/* create a linked list and perform the following functions 
+1. Search an element in the list
 2.Sort the list in ascending order
 3.Reverse the list
 */

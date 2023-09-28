@@ -1,3 +1,4 @@
+/*Program to create a sparse matrix*/
 #include <stdio.h>
 #include <stdlib.h>
 // Structure to represent a sparse matrix element

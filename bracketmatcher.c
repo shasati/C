@@ -1,4 +1,4 @@
-/*Program to check if the brackets are valid or not using stacks*/
+/*Program to check if the brackets  in an expression are valid or not using stacks*/
 #include<stdio.h>
 #include<stdlib.h>
 #define max 100
