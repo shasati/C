@@ -39,8 +39,8 @@ void addatend(int x){
     if(head == NULL){
         head = newnode;
     }else{
-        while(temp->next != NULL){
-            temp = temp->next;
+        while(temp != NULL){
+            temp->next = temp->next;
         }
         temp->next = newnode;
         newnode->prev = temp;
