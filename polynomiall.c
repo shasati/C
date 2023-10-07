@@ -7,9 +7,11 @@ struct poly{
     struct poly* next;
 };
 
-struct poly* head = NULL;
+struct poly* head1 = NULL;
+struct poly* head2 = NULL;
+struct poly* resulthead = NULL;
 
-void createpoly(){
+void createpoly(struct poly** head){
     struct poly *newnode,*temp;
     int exp,coeff;
     newnode = malloc(sizeof(struct poly));
@@ -17,12 +19,12 @@ void createpoly(){
     scanf("%d%d",&coeff,&exp);
     newnode->exp = exp;
     newnode->coeff = coeff;
-    if(head == NULL){
-        head = newnode;
+    if(*head == NULL){
+        *head = newnode;
     }
     else{
-        temp = head;
-        while(temp!=NULL && temp->next->exp > newnode->exp){
+        temp = *head;
+        while(temp->next != NULL && temp->next->exp > newnode->exp){
             temp = temp->next;
         }
         newnode->next = temp->next;
@@ -30,11 +32,27 @@ void createpoly(){
     }
 }
 
+void display(struct poly* head){
+    struct poly* temp = head;
+    while(temp != NULL){
+        printf("%dx%d+",temp->coeff,temp->exp);
+        temp = temp->next;
+    }
+    printf("\n");
+}
+
 int main(){
     int n;
-    printf("Enter the total elements in polynomial equation : ");
+    printf("Enter the total elements in first polynomial eq. : ");
     scanf("%d",&n);
     for(int i=0;i<n;i++){
-        createpoly();
+        createpoly(&head1);
     }
+    printf("Enter the total elements in second polynomial eq. : ");
+    scanf("%d",&n);
+    for(int i=0;i<n;i++){
+        createpoly(&head2);
+    }
+    display(head1);
+    display(head2);
 }
